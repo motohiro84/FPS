@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FirstPersonGunController : MonoBehaviour
 {
@@ -13,20 +14,32 @@ public class FirstPersonGunController : MonoBehaviour
   [SerializeField]
   int maxAmmo = 100;
   [SerializeField]
+  int maxSupplyValue = 100;
+  [SerializeField]
   int damage = 1;
   [SerializeField]
-  float shootInterval = 0.15f;
+  float shootInterval = 0.1f;
   [SerializeField]
   float shootRange = 50;
+  [SerializeField]
+  float supplyInterval = 0.1f;
   [SerializeField]
   Vector3 muzzleFlashScale;
   [SerializeField]
   GameObject muzzleFlashPrefab;
   [SerializeField]
   GameObject hitEffectPrefab;
+  [SerializeField]
+  Image ammoGauge;
+  [SerializeField]
+  Text ammoText;
+  [SerializeField]
+  Image supplyGauge;
 
   bool shooting = false;
-  int ammo;
+  bool supplying = false;
+  int ammo = 0;
+  int supplyValue = 0;
   GameObject muzzleFlash;
   GameObject hitEffect;
 
@@ -35,10 +48,35 @@ public class FirstPersonGunController : MonoBehaviour
     set
     {
       ammo = Mathf.Clamp(value, 0, maxAmmo);
+      //UIの表示を操作
+      //テキスト
+      ammoText.text = ammo.ToString("D3");
+      //ゲージ
+      float scaleX = (float)ammo / maxAmmo;
+      ammoGauge.rectTransform.localScale = new Vector3(scaleX, 1, 1);
     }
     get
     {
       return ammo;
+    }
+  }
+
+    public int SupplyValue
+  {
+    set
+    {
+      supplyValue = Mathf.Clamp(value, 0, maxSupplyValue);
+      if(SupplyValue >= maxSupplyValue)
+      {
+        Ammo = maxAmmo;
+        supplyValue = 0;
+      }
+      float scaleX = (float)supplyValue / maxSupplyValue;
+      supplyGauge.rectTransform.localScale = new Vector3(scaleX, 1, 1);
+    }
+    get
+    {
+      return supplyValue;
     }
   }
 
@@ -49,15 +87,20 @@ public class FirstPersonGunController : MonoBehaviour
 
     void Update()
     {
-    if (shootEnabled & ammo > 0 & GetInput()) //
+    if (shootEnabled & ammo > 0 & GetInput())
     {
       StartCoroutine(ShootTimer());
+    }
+    if (shootEnabled)
+    {
+      StartCoroutine(SupplyTimer());
     }
     }
 
   void InitGun()
   {
     Ammo = maxAmmo;
+    SupplyValue = 0;
   }
 
   bool GetInput()
@@ -151,4 +194,16 @@ public class FirstPersonGunController : MonoBehaviour
 
     Ammo--;
   }
+
+  IEnumerator SupplyTimer()
+  {
+    if(!supplying)
+    {
+      supplying = true;
+      SupplyValue++;
+      yield return new WaitForSeconds(supplyInterval);
+      supplying = false;
+    }
+  }
+
 }
