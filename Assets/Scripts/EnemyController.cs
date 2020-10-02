@@ -78,7 +78,7 @@ public class EnemyController : MonoBehaviour
   {
     agent.speed = moveSpeed;
     animator.SetFloat("Speed", agent.speed, 0.1f, Time.deltaTime);
-    agent.SetDestination(player.transform.position);
+    agent.SetDestination(target.position);
     rigidBody.velocity = agent.desiredVelocity;
   }
   void Stop()
