@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 1225bcdb785f846b3bcd5c5f3bec4a08, type: 2}
 --- !u!1 &13141676
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 145.9, y: 64.4}
+  m_AnchoredPosition: {x: 145.8999, y: 64.3999}
   m_SizeDelta: {x: 230, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60717964
@@ -780,7 +780,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 310, y: 64.4}
+  m_AnchoredPosition: {x: 310, y: 64.3999}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &615722963
@@ -1302,7 +1302,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1501265837
 BoxCollider:
@@ -1372,8 +1372,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501265836}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.116996735, y: -2.125086, z: 0.8081443}
-  m_LocalScale: {x: 30, y: 0.3, z: 30}
+  m_LocalPosition: {x: 0.116996735, y: -3.8, z: 0.8081443}
+  m_LocalScale: {x: 30, y: 3, z: 30}
   m_Children: []
   m_Father: {fileID: 1544355647}
   m_RootOrder: 4
@@ -4303,7 +4303,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229096112594661544}
   m_LocalRotation: {x: -0, y: -1, z: 0, w: -0.0000001872535}
-  m_LocalPosition: {x: 0, y: 1.3, z: 0}
+  m_LocalPosition: {x: 0, y: -1.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1226776244372329084}
@@ -4375,7 +4375,7 @@ GameObject:
   - component: {fileID: 1219515997814363570}
   - component: {fileID: 1197291801036119150}
   m_Layer: 0
-  m_Name: player
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5729,7 +5729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8101884258311607152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.22, z: -5.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7261675363319290328}
@@ -6637,6 +6637,7 @@ GameObject:
   - component: {fileID: 8101884258311607155}
   - component: {fileID: 8101884258311607154}
   - component: {fileID: 8101884258311607153}
+  - component: {fileID: 8101884258311607156}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -6695,6 +6696,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &8101884258311607156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101884258311607152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32482759abb764c668aa77dda18eee1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveEnabled: 1
+  maxHp: 3
+  ammoDamage: 5
+  attackInterval: 1
+  score: 100
+  targetTag: Player
+  deadTime: 3
 --- !u!4 &8166885552358853148
 Transform:
   m_ObjectHideFlags: 0
