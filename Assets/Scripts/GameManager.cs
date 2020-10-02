@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
   [SerializeField]
   float waitTime = 2;
   int score = 0;
+  [SerializeField]
+  EnemySpawner[] spawners;
+
   public int Score
   {
     set
@@ -57,14 +60,21 @@ public class GameManager : MonoBehaviour
     firstPerson.playerCanMove = true;
     firstPerson.enableCameraMovement = true;
     gunCOntroller.shootEnabled = true;
+    SetSpawners(true);
     yield return new WaitForSeconds(1);
     centerText.text = "";
     centerText.enabled = false;
   }
-    public void GameOver(string resultMessage)
+  public void GameOver(string resultMessage)
+  {
+      DataSender.resultMessage = resultMessage;
+      SceneManager.LoadScene("Result");
+  }
+  void SetSpawners(bool isEnable)
+  {
+    foreach(EnemySpawner spawner in spawners)
     {
-        DataSender.resultMessage = resultMessage;
-        SceneManager.LoadScene("Result");
+      spawner.spawnEnabled = isEnable;
     }
-
+  }
 }
