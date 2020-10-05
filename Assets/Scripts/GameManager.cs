@@ -6,48 +6,94 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
   [SerializeField]
-  int maxScore = 99999999;
+  int maxScore = 999999;
+  [SerializeField]
+  int maxKill = 100;
+  [SerializeField]
+  Canvas mainCanvas;
+  [SerializeField]
+  Canvas titleCanvas;
   [SerializeField]
   Text scoreText;
   [SerializeField]
+  Text killText;
+  [SerializeField]
   FirstPersonAIO firstPerson;
   [SerializeField]
-  FirstPersonGunController gunCOntroller;
+  FirstPersonGunController gunController;
   [SerializeField]
   Text centerText;
   [SerializeField]
   float waitTime = 2;
-  int score = 0;
   [SerializeField]
   EnemySpawner[] spawners;
+
+  int score = 0;
+  int kill = 0;
+  bool gameOver = false;
+  bool gameClear = false;
 
   public int Score
   {
     set
     {
       score = Mathf.Clamp(value, 0, maxScore);
-      scoreText.text = score.ToString("D8");
+
+      scoreText.text = score.ToString("D6");
     }
     get
     {
       return score;
     }
   }
-    void Start()
+
+  public int Kill
+  {
+    set
+    {
+      kill = value;
+
+      killText.text = kill.ToString("D3") + "/" + maxKill.ToString();
+
+      if(kill >= maxKill)
+      {
+        StartCoroutine(GameClear());
+      }
+    }
+    get
+    {
+      return kill;
+    }
+  }
+
+  void Start()
     {
     InitGame();
-    StartCoroutine(GameStart());
     }
+
   void InitGame()
   {
     Score = 0;
+    Kill = 0;
     firstPerson.playerCanMove = false;
-    firstPerson.enableCameraMovement = true;
-    gunCOntroller.shootEnabled = false;
+    firstPerson.enableCameraMovement = false;
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
+    gunController.shootEnabled = false;
+    StartCoroutine(GameStart());
   }
+
+  public void StartGameByButton()
+  {
+  }
+
   public IEnumerator GameStart()
   {
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+    firstPerson.enableCameraMovement = true;
     yield return new WaitForSeconds(waitTime);
     centerText.enabled = true;
     centerText.text = "3";
@@ -58,18 +104,72 @@ public class GameManager : MonoBehaviour
     yield return new WaitForSeconds(1);
     centerText.text = "GO!!";
     firstPerson.playerCanMove = true;
-    firstPerson.enableCameraMovement = true;
-    gunCOntroller.shootEnabled = true;
+    gunController.shootEnabled = true;
     SetSpawners(true);
     yield return new WaitForSeconds(1);
     centerText.text = "";
     centerText.enabled = false;
   }
-  public void GameOver(string resultMessage)
+
+  public IEnumerator GameOver()
   {
-      DataSender.resultMessage = resultMessage;
-      SceneManager.LoadScene("Result");
+    if (!gameOver)
+    {
+      gameOver = true;
+      firstPerson.playerCanMove = false;
+      firstPerson.enableCameraMovement = true;
+      gunController.shootEnabled = false;
+      SetSpawners(false);
+      centerText.enabled = true;
+      centerText.text = "Game Over";
+      StopEnemies();
+      yield return new WaitForSeconds(waitTime);
+      centerText.text = "";
+      centerText.enabled = false;
+      gameOver = false;
+      yield return SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
+    else
+    {
+      yield return null;
+    }
   }
+
+  public IEnumerator GameClear()
+  {
+    if (!gameClear)
+    {
+      gameClear = true;
+      firstPerson.playerCanMove = false;
+      firstPerson.enableCameraMovement = true;
+      gunController.shootEnabled = false;
+      SetSpawners(false);
+      centerText.enabled = true;
+      centerText.text = "Game Clear!!";
+      StopEnemies();
+      yield return new WaitForSeconds(waitTime);
+      centerText.text = "";
+      centerText.enabled = false;
+      gameClear = false;
+      yield return SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
+    else
+    {
+      yield return null;
+    }
+  }
+
+  void StopEnemies()
+  {
+    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+    foreach (GameObject enemy in enemies)
+    {
+      EnemyController controller = enemy.GetComponent<EnemyController>();
+      controller.moveEnabled = false;
+    }
+  }
+
   void SetSpawners(bool isEnable)
   {
     foreach(EnemySpawner spawner in spawners)
@@ -77,4 +177,5 @@ public class GameManager : MonoBehaviour
       spawner.spawnEnabled = isEnable;
     }
   }
+
 }

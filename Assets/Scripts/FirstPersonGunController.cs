@@ -188,7 +188,12 @@ public class FirstPersonGunController : MonoBehaviour
         }
       }
 
-      //★ここに敵へのダメージ処理などを追加
+      string tagName = hit.collider.gameObject.tag;
+      if(tagName == "Enemy")
+      {
+        EnemyController enemy = hit.collider.gameObject.GetComponent<EnemyController>();
+        enemy.Hp -= damage;
+      }
 
     }
 
