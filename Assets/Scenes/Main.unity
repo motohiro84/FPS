@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0.7882353}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.065
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 13141677}
   - component: {fileID: 13141679}
   - component: {fileID: 13141678}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 60717963}
   - component: {fileID: 60717965}
   - component: {fileID: 60717964}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: AmmoGaugeBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 66999868}
   - component: {fileID: 66999870}
   - component: {fileID: 66999869}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: SupplyGauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 83849512}
   - component: {fileID: 83849514}
   - component: {fileID: 83849513}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: AmmoGauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 344999021}
   - component: {fileID: 344999020}
   - component: {fileID: 344999019}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: MainCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ MonoBehaviour:
   scoreText: {fileID: 13141678}
   killText: {fileID: 930489564}
   firstPerson: {fileID: 1197291801036119150}
-  gunController: {fileID: 0}
+  gunController: {fileID: 1322921870}
   centerText: {fileID: 577587382}
   waitTime: 2
   spawners:
@@ -730,7 +730,7 @@ GameObject:
   - component: {fileID: 577587384}
   - component: {fileID: 577587383}
   - component: {fileID: 577587382}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: CenterText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   - component: {fileID: 615722962}
   - component: {fileID: 615722964}
   - component: {fileID: 615722963}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: AmmoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 681281475}
   - component: {fileID: 681281477}
   - component: {fileID: 681281476}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: SupplyGaugeBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1170,7 +1170,7 @@ GameObject:
   - component: {fileID: 930489563}
   - component: {fileID: 930489565}
   - component: {fileID: 930489564}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: KillText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 1160148805}
   - component: {fileID: 1160148807}
   - component: {fileID: 1160148806}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: ScoreLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1418,7 +1418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1322921869}
   - component: {fileID: 1322921870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2313,7 +2313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301419}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2329,7 +2329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301421}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2345,7 +2345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301423}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stock_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2362,7 +2362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301441}
   - component: {fileID: 2097110671}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_PBR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2379,7 +2379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301443}
   - component: {fileID: 2092867671}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_Receiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2396,7 +2396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301445}
   - component: {fileID: 2092867673}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_RearSight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2413,7 +2413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301447}
   - component: {fileID: 2092867675}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_MagCatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2430,7 +2430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301449}
   - component: {fileID: 2092867677}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_Magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2447,7 +2447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301451}
   - component: {fileID: 2092867679}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2464,7 +2464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301453}
   - component: {fileID: 2092867649}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_Handguard_m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2481,7 +2481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301455}
   - component: {fileID: 2092867651}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_Handguard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2497,7 +2497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301457}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2513,7 +2513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301459}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Selector_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2529,7 +2529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301461}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Selector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2545,7 +2545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MagCatch_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2561,7 +2561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301465}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MagCatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2577,7 +2577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301467}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Magazine_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2593,7 +2593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301469}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2610,7 +2610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301471}
   - component: {fileID: 2092867669}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_Stock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2626,7 +2626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301473}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2642,7 +2642,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301475}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2658,7 +2658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DustCover_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2674,7 +2674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DustCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2690,7 +2690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301481}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Button_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2706,7 +2706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301483}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2722,7 +2722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bolt_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2738,7 +2738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301487}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2755,7 +2755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301489}
   - component: {fileID: 2092867653}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_Grip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2772,7 +2772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301491}
   - component: {fileID: 2092867655}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_FrontSight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2789,7 +2789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301493}
   - component: {fileID: 2092867657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_DustCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2806,7 +2806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301495}
   - component: {fileID: 2092867659}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_BoltFwdAsst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2823,7 +2823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301497}
   - component: {fileID: 2092867661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2840,7 +2840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087301499}
   - component: {fileID: 2092867663}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1_Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2856,7 +2856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301501}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M4A1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2872,7 +2872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087301503}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4088,13 +4088,74 @@ GameObject:
   - component: {fileID: 1243330503840927246}
   - component: {fileID: 1164692310851796008}
   - component: {fileID: 1202500387610208138}
-  m_Layer: 0
+  - component: {fileID: 1228616459422494957}
+  m_Layer: 8
   m_Name: Player Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1228616459422494957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228616459422494956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1227141025897499478}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 1
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 1
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1229096112594661544
 GameObject:
   m_ObjectHideFlags: 0
