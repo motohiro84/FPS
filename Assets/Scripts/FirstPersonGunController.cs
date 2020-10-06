@@ -42,6 +42,7 @@ public class FirstPersonGunController : MonoBehaviour
   int supplyValue = 0;
   GameObject muzzleFlash;
   GameObject hitEffect;
+  int layerMask = ~(1 << 9);
 
   public int Ammo
   {
@@ -171,7 +172,7 @@ public class FirstPersonGunController : MonoBehaviour
     RaycastHit hit;
 
     //レイを飛ばして、ヒットしたオブジェクトの情報を得る
-    if (Physics.Raycast(ray, out hit, shootRange))
+    if (Physics.Raycast(ray, out hit, shootRange, layerMask))
     {
       //ヒットエフェクトON
       if (hitEffectPrefab != null)
