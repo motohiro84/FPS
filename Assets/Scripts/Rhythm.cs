@@ -22,11 +22,11 @@ public class Rhythm : MonoBehaviour
     {
         if ( Music.IsJustChangedBar() )
         {
-            r.material.SetColor("_EmissionColor", coloring1);
+            r.material.SetColor("_EmissionColor", coloring2);
         }
         else if ( Music.IsJustChangedBeat() )
         {
-            r.material.SetColor("_EmissionColor", coloring2);
+            r.material.SetColor("_EmissionColor", coloring1);
         }
     }
 }
