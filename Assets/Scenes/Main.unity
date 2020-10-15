@@ -310,7 +310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 145.8999, y: 64.3999}
+  m_AnchoredPosition: {x: 145.89941, y: 64.3999}
   m_SizeDelta: {x: 230, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60717964
@@ -999,7 +999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 145.9, y: 38}
+  m_AnchoredPosition: {x: 145.90039, y: 38}
   m_SizeDelta: {x: 230, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &681281476
@@ -1491,6 +1491,114 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160148804}
   m_CullTransparentMesh: 0
+--- !u!1 &1162402506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1162402510}
+  - component: {fileID: 1162402509}
+  - component: {fileID: 1162402508}
+  - component: {fileID: 1162402507}
+  - component: {fileID: 1162402511}
+  m_Layer: 0
+  m_Name: Rhythm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1162402507
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162402506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1162402508
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162402506}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e3207c9729bf249b6b8c8f7c8de210a6, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1162402509
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162402506}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1162402510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162402506}
+  m_LocalRotation: {x: 0.0030427354, y: -0.99661463, z: 0.06969008, w: -0.04351315}
+  m_LocalPosition: {x: 0.0006, y: 0.1702, z: -0.1896}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_Children: []
+  m_Father: {fileID: 2087301441}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1162402511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162402506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7914db7b165f24e92ab2329e9f796ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coloring1: {r: 0.25734904, g: 1.5294119, b: 0.1601478, a: 0}
+  coloring2: {r: 4, g: 0, b: 0, a: 0}
 --- !u!1 &1296845762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,7 +1696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootEnabled: 1
-  shootMode: 0
+  shootMode: 1
   maxAmmo: 50
   maxSupplyValue: 100
   damage: 1
@@ -1601,6 +1709,7 @@ MonoBehaviour:
   ammoGauge: {fileID: 83849513}
   ammoText: {fileID: 615722963}
   supplyGauge: {fileID: 66999869}
+  sound1: {fileID: 8300000, guid: 9937c2a71513842ff9533a612e0463ca, type: 3}
 --- !u!4 &2087301419
 Transform:
   m_ObjectHideFlags: 0
@@ -1671,6 +1780,7 @@ Transform:
   - {fileID: 2087301443}
   - {fileID: 2087301471}
   - {fileID: 1322921869}
+  - {fileID: 1162402510}
   m_Father: {fileID: 1227141025897499478}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 8, y: 185, z: 0}
@@ -3592,8 +3702,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 9937c2a71513842ff9533a612e0463ca, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3991,6 +4101,7 @@ GameObject:
   - component: {fileID: 1281693363201040472}
   - component: {fileID: 1219515997814363570}
   - component: {fileID: 1197291801036119150}
+  - component: {fileID: 1229096112594661545}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3998,6 +4109,77 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1229096112594661545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229096112594661544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de56ef4844824edfa71045e029d4093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnStart: 0
+  Volume: 1
+  OutputMixerGroup: {fileID: 0}
+  Sections:
+  - Name: Section
+    Clips:
+    - {fileID: 8300000, guid: 4da8bab6272c345f18744adde5bcde1c, type: 3}
+    Meters:
+    - StartBar: 0
+      Tempo: 360
+      UnitPerBeat: 4
+      UnitPerBar: 8
+      Numerator: 2
+      Denominator: 4
+    SyncType: 3
+    SyncFactor: 1
+    Markers: []
+    EntryPointTiming:
+      Bar: 0
+      Beat: 0
+      Unit: 0
+    ExitPointTiming:
+      Bar: 360
+      Beat: 0
+      Unit: 0
+    LoopStartTiming:
+      Bar: 0
+      Beat: 0
+      Unit: 0
+    LoopEndTiming:
+      Bar: 360
+      Beat: 0
+      Unit: 0
+    Transition:
+      UseFadeOut: 0
+      FadeOutTime: 0
+      FadeOutOffset: 0
+      UseFadeIn: 0
+      FadeInTime: 0
+      FadeInOffset: 0
+    TransitionType: 0
+    TransitionDestinationIndex: 0
+  Modes:
+  - Name: Mode
+    TotalVolume: 1
+    LayerVolumes:
+    - 1
+  ModeTransitionParam:
+    FadeTime: 1
+    FadeOffset: 0
+    TimeUnitType: 0
+    SyncType: 0
+    SyncFactor: 1
+  SectionTransitionOverrides: []
+  ModeTransitionOverrides: []
+  NumTracks: 1
+  SeekBar: -1
+  PreviewSectionIndex: 0
+  PreviewModeIndex: 0
 --- !u!20 &1243330503840927246
 Camera:
   m_ObjectHideFlags: 0

@@ -43,6 +43,9 @@ public class FirstPersonGunController : MonoBehaviour
   GameObject muzzleFlash;
   GameObject hitEffect;
   int layerMask = ~(1 << 9);
+  public AudioClip sound1;
+  AudioSource audioSource;
+  bool rhythm;
 
   public int Ammo
   {
@@ -83,11 +86,15 @@ public class FirstPersonGunController : MonoBehaviour
 
     void Start()
     {
-    InitGun(); //初期化
+    InitGun();
+    Music.Play( "Player" );
+    audioSource = GameObject.Find("Player").GetComponent<AudioSource>();
     }
 
     void Update()
     {
+      Rhythm();
+
     if (shootEnabled & ammo > 0 & GetInput())
     {
       StartCoroutine(ShootTimer());
@@ -96,6 +103,18 @@ public class FirstPersonGunController : MonoBehaviour
     {
       StartCoroutine(SupplyTimer());
     }
+    }
+
+    void Rhythm()
+    {
+      if ( Music.IsJustChangedBar() )
+      {
+          rhythm = false;
+      }
+      else if ( Music.IsJustChangedBeat() )
+      {
+          rhythm = true;
+      }
     }
 
   void InitGun()
@@ -120,7 +139,7 @@ public class FirstPersonGunController : MonoBehaviour
 
   IEnumerator ShootTimer()
   {
-    if (!shooting)
+    if (!shooting & rhythm)
     {
       shooting = true;
 
@@ -162,6 +181,7 @@ public class FirstPersonGunController : MonoBehaviour
     }
     else
     {
+      audioSource.PlayOneShot(sound1);
       yield return null;
     }
   }
