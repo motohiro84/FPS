@@ -44,6 +44,7 @@ public class FirstPersonGunController : MonoBehaviour
   GameObject hitEffect;
   int layerMask = ~(1 << 9);
   public AudioClip sound1;
+  public AudioClip sound2;
   AudioSource audioSource;
   bool rhythm;
 
@@ -178,6 +179,7 @@ public class FirstPersonGunController : MonoBehaviour
       }
 
       shooting = false;
+      audioSource.PlayOneShot(sound2);
     }
     else
     {

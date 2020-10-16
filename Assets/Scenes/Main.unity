@@ -1710,6 +1710,7 @@ MonoBehaviour:
   ammoText: {fileID: 615722963}
   supplyGauge: {fileID: 66999869}
   sound1: {fileID: 8300000, guid: 9937c2a71513842ff9533a612e0463ca, type: 3}
+  sound2: {fileID: 8300000, guid: 8ec9c36dc62bb4e23838f76e5607c8f0, type: 3}
 --- !u!4 &2087301419
 Transform:
   m_ObjectHideFlags: 0
