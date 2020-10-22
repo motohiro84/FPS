@@ -7,8 +7,9 @@ public class Slide : MonoBehaviour
   public AnimationCurve animCurve = AnimationCurve.Linear(0, 0, 1, 1);
   public Vector3 inPosition1;        // スライドイン後の位置
   public Vector3 inPosition2;        // スライドイン後の位置
-  public float duration = 1.0f;    // スライド時間（秒）
+  public float duration = 0.5f;    // スライド時間（秒）
   public Vector3 startPos;
+
 
   void Start()
   {

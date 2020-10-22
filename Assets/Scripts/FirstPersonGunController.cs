@@ -47,6 +47,7 @@ public class FirstPersonGunController : MonoBehaviour
   public AudioClip sound2;
   AudioSource audioSource;
   bool rhythm;
+  bool missKey = false;
 
   public int Ammo
   {
@@ -66,12 +67,12 @@ public class FirstPersonGunController : MonoBehaviour
     }
   }
 
-    public int SupplyValue
+  public int SupplyValue
   {
     set
     {
       supplyValue = Mathf.Clamp(value, 0, maxSupplyValue);
-      if(SupplyValue >= maxSupplyValue)
+      if (SupplyValue >= maxSupplyValue)
       {
         Ammo = maxAmmo;
         supplyValue = 0;
@@ -85,16 +86,16 @@ public class FirstPersonGunController : MonoBehaviour
     }
   }
 
-    void Start()
-    {
+  void Start()
+  {
     InitGun();
-    Music.Play( "Player" );
+    Music.Play("Player");
     audioSource = GameObject.Find("Player").GetComponent<AudioSource>();
-    }
+  }
 
-    void Update()
-    {
-      Rhythm();
+  void Update()
+  {
+    Rhythm();
 
     if (shootEnabled & ammo > 0 & GetInput())
     {
@@ -104,19 +105,25 @@ public class FirstPersonGunController : MonoBehaviour
     {
       StartCoroutine(SupplyTimer());
     }
-    }
+  }
 
-    void Rhythm()
+  void Rhythm()
+  {
+    if (Music.IsJustChangedBar())
     {
-      if ( Music.IsJustChangedBar() )
-      {
-          rhythm = false;
-      }
-      else if ( Music.IsJustChangedBeat() )
-      {
-          rhythm = true;
-      }
+      rhythm = false;
     }
+    Invoke("RhythmMethod", 0.1f);
+    // else if (Music.IsJustChangedBeat())
+    // {
+    //   rhythm = true;
+    // }
+  }
+
+  void RhythmMethod()
+  {
+    rhythm = true;
+  }
 
   void InitGun()
   {
@@ -140,14 +147,14 @@ public class FirstPersonGunController : MonoBehaviour
 
   IEnumerator ShootTimer()
   {
-    if (!shooting & rhythm)
+    if (!shooting && rhythm && !missKey)
     {
       shooting = true;
 
       //マズルフラッシュON
       if (muzzleFlashPrefab != null)
       {
-        if(muzzleFlash != null)
+        if (muzzleFlash != null)
         {
           muzzleFlash.SetActive(true);
         }
@@ -164,13 +171,13 @@ public class FirstPersonGunController : MonoBehaviour
       yield return new WaitForSeconds(shootInterval);
 
       //マズルフラッシュOFF
-      if(muzzleFlash != null)
+      if (muzzleFlash != null)
       {
         muzzleFlash.SetActive(false);
       }
 
       //ヒットエフェクトOFF
-      if(hitEffect != null)
+      if (hitEffect != null)
       {
         if (hitEffect.activeSelf)
         {
@@ -183,9 +190,16 @@ public class FirstPersonGunController : MonoBehaviour
     }
     else
     {
+      missKey = true;
       audioSource.PlayOneShot(sound1);
+      Invoke("Miss", 0.2f);
       yield return null;
     }
+  }
+
+  void Miss()
+  {
+    missKey = false;
   }
 
   void Shoot()
@@ -212,7 +226,7 @@ public class FirstPersonGunController : MonoBehaviour
       }
 
       string tagName = hit.collider.gameObject.tag;
-      if(tagName == "Enemy")
+      if (tagName == "Enemy")
       {
         EnemyController enemy = hit.collider.gameObject.GetComponent<EnemyController>();
         enemy.Hp -= damage;
@@ -225,7 +239,7 @@ public class FirstPersonGunController : MonoBehaviour
 
   IEnumerator SupplyTimer()
   {
-    if(!supplying)
+    if (!supplying)
     {
       supplying = true;
       SupplyValue++;

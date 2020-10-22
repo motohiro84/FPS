@@ -9,15 +9,35 @@ public class NewPrefab : MonoBehaviour
   public GameObject prefab1;
   public GameObject obj;
 
+  float n = 0;
+  float a;
+  float b;
+  float ave;
+  float plus;
+
   void Start()
   {
   }
 
   void Update()
   {
-    if (Music.IsJustChangedBar() && Time.time > 1)
+    if (Music.IsJustChangedBar() && Time.time > 4)
     {
       PrefabNew();
+      a = Time.time;
+      if (n == 0)
+      {
+        b = Time.time;
+        n++;
+      }
+      else
+      {
+        plus += (a - b);
+        ave = plus / n;
+        n++;
+        b = Time.time;
+      }
+      Debug.Log(ave);
     }
   }
 
