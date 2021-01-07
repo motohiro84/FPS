@@ -4346,7 +4346,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 4da8bab6272c345f18744adde5bcde1c, type: 3}
     Meters:
     - StartBar: 0
-      Tempo: 480
+      Tempo: 360
       UnitPerBeat: 4
       UnitPerBar: 8
       Numerator: 2
@@ -4359,7 +4359,7 @@ MonoBehaviour:
       Beat: 0
       Unit: 0
     ExitPointTiming:
-      Bar: 655
+      Bar: 491
       Beat: 0
       Unit: 0
     LoopStartTiming:
@@ -4367,7 +4367,7 @@ MonoBehaviour:
       Beat: 0
       Unit: 0
     LoopEndTiming:
-      Bar: 655
+      Bar: 491
       Beat: 0
       Unit: 0
     Transition:
