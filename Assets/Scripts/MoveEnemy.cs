@@ -16,13 +16,24 @@ public class MoveEnemy : MonoBehaviour
   {
     enemyController = GetComponent<CharacterController>();
     animator = GetComponent<Animator>();
-    destination = new Vector3(25f, 0f, 25f);
-    velocity = Vector3.zero
+    destination = new Vector3(0f, 0f, 0f);
+    velocity = Vector3.zero;
   }
+
 
   // Update is called once per frame
   void Update()
   {
-
+    if (enemyController.isGrounded)
+    {
+      velocity = Vector3.zero;
+      animator.SetFloat("Speed", 2.0f);
+      direction = (destination - transform.position).normalized;
+      transform.LookAt(new Vector3(destination.x, transform.position.y, destination.z));
+      velocity = direction * walkSpeed;
+      Debug.Log(destination);
+    }
+    velocity.y += Physics.gravity.y * Time.deltaTime;
+    enemyController.Move(velocity * Time.deltaTime);
   }
 }
