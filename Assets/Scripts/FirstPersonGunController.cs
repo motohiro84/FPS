@@ -228,10 +228,9 @@ public class FirstPersonGunController : MonoBehaviour
       string tagName = hit.collider.gameObject.tag;
       if (tagName == "Enemy")
       {
-        EnemyController enemy = hit.collider.gameObject.GetComponent<EnemyController>();
-        enemy.Hp -= damage;
+        // EnemyController enemy = hit.collider.gameObject.GetComponent<EnemyController>();
+        // enemy.Hp -= damage;
       }
-
     }
 
     Ammo--;
