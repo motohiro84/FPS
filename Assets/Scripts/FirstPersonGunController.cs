@@ -42,7 +42,7 @@ public class FirstPersonGunController : MonoBehaviour
   int supplyValue = 0;
   GameObject muzzleFlash;
   GameObject hitEffect;
-  int layerMask = ~(1 << 9);
+  int layerMask = ~(1 << 9 | 1 << 12);
   public AudioClip sound1;
   public AudioClip sound2;
   AudioSource audioSource;
