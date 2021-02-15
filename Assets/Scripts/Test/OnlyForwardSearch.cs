@@ -24,7 +24,7 @@ public class OnlyForwardSearch : MonoBehaviour
       {
         if (!Physics.Linecast(transform.position + Vector3.up, other.transform.position + Vector3.up, obstacleLayer))
         {
-          Debug.Log("発見" + angle);
+          // Debug.Log("発見" + angle);
           moveEnemy.SetState(MoveEnemy.EnemyState.Chase, other.transform);
         }
       }
@@ -35,7 +35,7 @@ public class OnlyForwardSearch : MonoBehaviour
   {
     if (other.tag == "Player")
     {
-      Debug.Log("見失う");
+      // Debug.Log("見失う");
       moveEnemy.SetState(MoveEnemy.EnemyState.Wait);
     }
   }

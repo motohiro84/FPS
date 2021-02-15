@@ -210,6 +210,8 @@ public class FirstPersonGunController : MonoBehaviour
     //レイを飛ばして、ヒットしたオブジェクトの情報を得る
     if (Physics.Raycast(ray, out hit, shootRange, layerMask))
     {
+      Debug.Log(hit.collider.gameObject.layer);
+      Debug.Log(hit.collider.gameObject.tag);
       //ヒットエフェクトON
       if (hitEffectPrefab != null)
       {
